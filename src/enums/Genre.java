@@ -1,2 +1,5 @@
-package enums;public enum Genre {
+package enums;
+
+public enum Genre {
+    FANTASTIC,ACTIONS,DRAMA,CRIME,COMEDY,HORROR,FANTASY,ROMANCE,WAR;
 }
