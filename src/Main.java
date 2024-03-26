@@ -19,7 +19,6 @@ public class Main {
         MovieFindableServiceImpl service = new MovieFindableServiceImpl();
         MovieSortableServiceImpl sort = new MovieSortableServiceImpl();
 
-        Producer producerIamRobot = new Producer("Лоуренс"," Марк");
 
         List<Actor>actorsIamRobot= List.of(
                 new Actor("Уилл Смит","детектив Дэл Спунер"),
@@ -27,6 +26,7 @@ public class Main {
                 new Actor("Джеймс Кромвелл","доктор Альфред Лэннинг"),
                 new Actor("Чи Макбрайд","лейтенант Джон Бергин")
         );
+        Producer producerIamRobot = new Producer("Лоуренс"," Марк2");
         Movie movie1 =new Movie("I'm Robot",LocalDate.of(2004,1,1),Genre.FANTASTIC,producerIamRobot,actorsIamRobot);
         Database.movies.add(movie1);
 
@@ -90,7 +90,8 @@ public class Main {
                 System.out.println(service.findMovieByProducer(scanner.nextLine()));
             }
             case 6 -> {
-                System.out.println(service.findMovieByGenre(Genre.FANTASTIC));
+                System.out.println("Write Genre "+Arrays.toString(Genre.values()));
+                System.out.println(service.findMovieByGenre(Genre.valueOf(new Scanner(System.in).nextLine())));
             }
             case 7 -> {
                 scanner.nextLine();
